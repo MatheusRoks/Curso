@@ -5,18 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js" defer></script>
     <title>Landpage</title>
 </head>
 <body>
     <header class="header" id="header">
         <nav class="nav_container" id="nav_container">
             <ul>
-                
+                <li><a href="#verifica-maioridade">Verificar Maioridade</a></li>
+                <li><a href="#troca-valor">Trocar Valores</a></li>
+                <li><a href="#area-triangulo">Área do Triângulo</a></li>
+                <li><a href="#idade-meses">Idade em Meses e Dias</a></li>
             </ul>
         </nav>
     </header>
     <main class="main" id="main">
-
+        <h1 id="h1-main">Trabalhando com formulários</h1>
+        <div id="verifica-maioridade">
+            <h2>Verificador de Maioridade</h2>
+            <form action="" id="form-idade">
+                <label for="data">Digite a data de nascimento:</label>
+                <input type="date" id="data" name="data" min="1900-01-01" max=""  required>
+                <input type="text" id="resultado" name="resultado" readonly placeholder="Resultado">
+                <button type="submit">Verificar</button>
+            </form>
+        </div>
+        <div id="troca-valor">
+            <h2>Troca de Valor</h2>
+            <form action="" id="form-troca">
+                <label for="input1">Valor 1:</label>
+                <input type="text" id="input1" name="input1" required>
+                <label for="input2">Valor 2:</label>
+                <input type="text" id="input2" name="input2" required>
+                <label for="resultado-troca1">Valor 1:</label>
+                <input type="text" id="resultado-troca1" name="resultado-troca1" readonly placeholder="Resultado">
+                <label for="resultado-troca2">Valor 2:</label>
+                <input type="text" id="resultado-troca2" name="resultado-troca2" readonly placeholder="Resultado">
+                <button type="submit" id="botao-troca">Trocar</button>
+            </form>
+        </div>
+        <div id="area-triangulo">
+            <h2>Área do Triângulo</h2>
+            <form action="" id="form-triangulo">
+                <label for="base">Base(cm):</label>
+                <input type="number" id="base" name="base" min="0" step="any" required>
+                <label for="altura">Altura(cm):</label>
+                <input type="number" id="altura" name="altura" min="0" step="any" required>
+                <label for="resultado-triangulo">Área:</label>
+                <input type="text" id="resultado-triangulo" name="resultado-triangulo" readonly placeholder="Resultado">
+                <button type="submit">Calcular</button>
+            </form>
+        </div>
+        <div id="idade-meses">
+            <h2 id="h2-idade-meses">Idade em Meses e dias</h2>
+            <form action="" id="form-idade-meses-dias">
+                <label for="idade-anos">Idade em anos:</label>
+                <input type="number" id="idade-anos" name="idade-anos" min="0" required>
+                <label for="resultado-idade-meses">Idade em meses:</label>
+                <input type="text" id="resultado-idade-meses" name="resultado-idade-meses" readonly placeholder="Resultado">
+                <label for="resultado-idade-dias">Idade em dias:</label>
+                <input type="text" id="resultado-idade-dias" name="resultado-idade-dias" readonly placeholder="Resultado">
+                <button type="submit">Calcular</button>
+        </div>
     </main>
     <footer class="footer" id="footer">
 
