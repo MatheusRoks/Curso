@@ -28,6 +28,7 @@
                 <input type="date" id="data" name="data" min="1900-01-01" max=""  required>
                 <input type="text" id="resultado" name="resultado" readonly placeholder="Resultado">
                 <button type="submit">Verificar</button>
+                <button type="reset">Limpar</button>
             </form>
         </div>
         <div id="troca-valor">
@@ -42,6 +43,7 @@
                 <label for="resultado-troca2">Valor 2:</label>
                 <input type="text" id="resultado-troca2" name="resultado-troca2" readonly placeholder="Resultado">
                 <button type="submit" id="botao-troca">Trocar</button>
+                <button type="reset">Limpar</button>
             </form>
         </div>
         <div id="area-triangulo">
@@ -54,6 +56,7 @@
                 <label for="resultado-triangulo">Área:</label>
                 <input type="text" id="resultado-triangulo" name="resultado-triangulo" readonly placeholder="Resultado">
                 <button type="submit">Calcular</button>
+                <button type="reset">Limpar</button>
             </form>
         </div>
         <div id="idade-meses">
@@ -66,6 +69,70 @@
                 <label for="resultado-idade-dias">Idade em dias:</label>
                 <input type="text" id="resultado-idade-dias" name="resultado-idade-dias" readonly placeholder="Resultado">
                 <button type="submit">Calcular</button>
+                <button type="reset">Limpar</button>    
+            </form>
+        </div>
+        <div id="desconto">
+            <h2 id="h2-desconto">Desconto de 10%</h2>
+            <p>Para produtos com valor superior a R$ 100,00 teremos um desconto de 10% na sua aquisição.</p>
+            <form action="" id="form-desconto">
+                    <label for="preco-original">Preço Original:</label>
+                    <input type="number" id="preco-original" name="preco-original" min="0" step="any" required>
+                    <label for="resultado-desconto">Preço com Desconto:</label>
+                    <input type="text" id="resultado-desconto" name="resultado-desconto" readonly placeholder="Resultado">
+                    <button type="submit" >Calcular</button>
+                    <button type="reset">Limpar</button>
+            </form>
+        </div>
+        <div id="veri-ano-bi">
+            <h2 id="h2-veri-ano-bi">Verificador de Ano Bissexto</h2>
+            <form action="" id="form-ano-bissexto">
+                <label for="ano">Digite um ano:</label>
+                <input type="number" id="ano" name="ano" min="1" required>
+                <label for="resultado-ano-bissexto">Resultado:</label>
+                <input type="text" id="resultado-ano-bissexto" name="resultado-ano-bissexto" readonly placeholder="Resultado">
+                <button type="submit">Verificar</button>
+                <button type="reset">Limpar</button>
+            </form>
+        </div>
+        <h2 id="h2-calculadora">Calculadora</h2>
+        <div class="calculadora">
+            <input type="text" name="display" id="display" readonly placeholder="0000">
+
+            <div class="botoes">
+                <button onclick="adicionar('(')">(</button>
+                <button onclick="adicionar(')')">)</button>
+                <button  class="limpar" onclick="limpar()">C</button>
+                <button class="btn-operador" onclick="adicionar('/')">÷</button>
+                <button onclick="adicionar('7')">7</button>
+                <button onclick="adicionar('8')">8</button>
+                <button onclick="adicionar('9')">9</button>
+                <button class="btn-operador" onclick="adicionar('*')">×</button>
+                <button onclick="adicionar('4')">4</button>
+                <button onclick="adicionar('5')">5</button>
+                <button onclick="adicionar('6')">6</button>
+                <button class="btn-operador" onclick="adicionar('-')">−</button>
+                <button onclick="adicionar('1')">1</button>
+                <button onclick="adicionar('2')">2</button>
+                <button onclick="adicionar('3')">3</button>
+                <button class="btn-mais" onclick="adicionar('+')">+</button>
+                <button onclick="adicionar('0')">0</button>
+                <button class="btn-igual" onclick="calcular()">=</button>
+
+            </div>
+
+        </div>
+        <div class="par-impart"> 
+            <h2 id="h2-par-impar">Verificador de Número Par ou Ímpar</h2>
+            <form action="" id="form-par-impar">
+                <label for="numero">Digite um número:</label>
+                <input type="number" id="numero" name="numero" required>
+                <label for="resultado-par-impar">Resultado:</label>
+                <input type="text" id="resultado-par-impar" name="resultado-par-impar" readonly placeholder="Resultado">
+                <button type="submit">Verificar</button>
+                <button type="reset">Limpar</button>
+            </form>
+
         </div>
     </main>
     <footer class="footer" id="footer">

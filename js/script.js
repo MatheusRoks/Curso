@@ -16,7 +16,7 @@ function calcularIdade(dataNascimento) {
 }
 
 const verificarMaioridade = (event) => {
-    event.preventDefault();
+    event.preventDefault(); 
 
     const dataNascimento = document.getElementById("data").value;
     const idade = calcularIdade(dataNascimento);
@@ -86,8 +86,8 @@ function idadeMesesDias() {
     const meses = idadeAnos * 12;
     const dias = Math.floor(idadeAnos * 365.25);
 
-    document.getElementById("resultado-idade-meses").value = `Sua idade em meses é: ${meses} meses.`;
-    document.getElementById("resultado-idade-dias").value = `Sua idade em dias é: ${dias} dias.`;
+    document.getElementById("resultado-idade-meses").value = meses;
+    document.getElementById("resultado-idade-dias").value = dias;
 }
 
 const formIdadeMesesDias = document.getElementById("form-idade-meses-dias");
@@ -96,5 +96,101 @@ if (formIdadeMesesDias) {
     formIdadeMesesDias.addEventListener("submit", (event) => {
         event.preventDefault();
         idadeMesesDias();
+    });
+}
+
+function descontoProduto() {
+    const precoOriginal = parseFloat(document.getElementById("preco-original").value);
+    const percentualDesconto = 0.10; // 10% de desconto
+
+    if (isNaN(precoOriginal) || precoOriginal <= 0) {
+        document.getElementById("resultado-desconto").value = "Digite um preço válido.";
+        return;
+    } else if (precoOriginal > 100) {
+        let valorDesconto = precoOriginal * percentualDesconto;
+        let precoComDesconto = precoOriginal - valorDesconto;
+        document.getElementById("resultado-desconto").value = precoComDesconto.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+        });s
+    } else {
+        document.getElementById("resultado-desconto").value = precoComDesconto.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+        });
+    }
+}
+
+const formDesconto = document.getElementById("form-desconto");
+
+if (formDesconto) {
+    formDesconto.addEventListener("submit", (event) => {
+        event.preventDefault();
+        descontoProduto();
+    });
+}
+
+function verificadorAnoBissexto() {
+    const ano = parseInt(document.getElementById("ano").value, 10);
+    const resultado = document.getElementById("resultado-ano-bissexto");
+
+    if (isNaN(ano)) {
+        resultado.value = "Digite um ano válido.";
+        return;
+    }
+
+    if ((ano % 4 === 0 && ano % 100 !== 0) || (ano % 400 === 0)) {
+        resultado.value = `${ano} é um ano bissexto.`;
+    } else {
+        resultado.value = `${ano} não é um ano bissexto.`;
+    }
+}
+
+const formAnoBissexto = document.getElementById("form-ano-bissexto");
+
+if (formAnoBissexto) {
+    formAnoBissexto.addEventListener("submit", (event) => {
+        event.preventDefault();
+        verificadorAnoBissexto();
+    });
+}
+function adicionar(valor){
+    const display = document.getElementById("display");
+    display.value += valor;
+}
+
+function limpar(){
+    const display = document.getElementById("display");
+    display.value = "";
+}
+
+function calcular(){
+    const display = document.getElementById("display");
+    try {
+        display.value = eval(display.value);
+    } catch (error) {
+        display.value = "Erro";
+    }
+}
+
+function verificarParImpar() {
+    const numero = parseInt(document.getElementById("numero").value, 10);
+    const resultado = document.getElementById("resultado-par-impar");
+    if (isNaN(numero)) {
+        resultado.value = "Digite um número válido.";
+        return;
+    }
+    if (numero % 2 === 0) {
+        resultado.value = `${numero} é um número par.`;
+    } else {
+        resultado.value = `${numero} é um número ímpar.`;
+    }   
+}
+
+const formParImpar = document.getElementById("form-par-impar");
+if (formParImpar) {
+    formParImpar.addEventListener("submit", (event) => {
+        event.preventDefault();
+        verificarParImpar();
     });
 }
