@@ -3,32 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/script.js" defer></script>
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
     <title>Landpage</title>
 </head>
 <body>
     <header class="header" id="header">
         <nav class="nav_container" id="nav_container">
-            <ul>
+            <ul id="navegacao">
+
+                <li><a href="#medias">Médias</a></li>
                 <li><a href="#verifica-maioridade">Verificar Maioridade</a></li>
                 <li><a href="#troca-valor">Trocar Valores</a></li>
                 <li><a href="#area-triangulo">Área do Triângulo</a></li>
                 <li><a href="#idade-meses">Idade em Meses e Dias</a></li>
+                <li><a href="#desconto">Desconto de 10%</a></li>
+                <li><a href="#veri-ano-bi">Verificador de Ano Bissexto</a></li>
+                <li><a href="#h2-calculadora">Calculadora</a></li>
+                <li><a href="#h2-par-impar">Verificador de Número Par ou Ímpar</a></li>
+                <li><a href="#temp-convert">Conversor de Temperatura</a></li>
+                <li><a href="#veri-numero">Verificador de Números</a></li>
+                <li><a href="#h2-calculadora-imc">Calculadora de IMC</a></li>
             </ul>
         </nav>
     </header>
     <main class="main" id="main">
         <h1 id="h1-main">Trabalhando com formulários</h1>
+        <div id="medias">
+            <h2>Médias</h2>
+            <form action="" id="form-medias">
+                <label for="nota1">Nota 1:</label>
+                <input type="number" id="nota1" name="nota1" min="0" max="10" step="0.1" required>
+                <label for="nota2">Nota 2:</label>
+                <input type="number" id="nota2" name="nota2" min="0" max="10" step="0.1" required>
+                <label for="nota3">Nota 3:</label>
+                <input type="number" id="nota3" name="nota3" min="0" max="10" step="0.1" required>
+                <label for="resultado-medias">Média:</label>
+                <input type="text" id="resultado-medias" name="resultado-medias" readonly placeholder="Resultado">
+                <button type="submit" class="resultado-botao">Calcular</button>
+                <button type="reset" class="limpar-botao">Limpar</button>
+            </form>
+        </div>
         <div id="verifica-maioridade">
             <h2>Verificador de Maioridade</h2>
             <form action="" id="form-idade">
                 <label for="data">Digite a data de nascimento:</label>
                 <input type="date" id="data" name="data" min="1900-01-01" max=""  required>
                 <input type="text" id="resultado" name="resultado" readonly placeholder="Resultado">
-                <button type="submit">Verificar</button>
-                <button type="reset">Limpar</button>
+                <button type="submit" class="resultado-botao">Verificar</button>
+                <button type="reset" class="limpar-botao">Limpar</button>
             </form>
         </div>
         <div id="troca-valor">
@@ -42,8 +66,8 @@
                 <input type="text" id="resultado-troca1" name="resultado-troca1" readonly placeholder="Resultado">
                 <label for="resultado-troca2">Valor 2:</label>
                 <input type="text" id="resultado-troca2" name="resultado-troca2" readonly placeholder="Resultado">
-                <button type="submit" id="botao-troca">Trocar</button>
-                <button type="reset">Limpar</button>
+                <button type="submit" id="botao-troca" class="resultado-botao">Trocar</button>
+                <button type="reset" class="limpar-botao">Limpar</button>
             </form>
         </div>
         <div id="area-triangulo">
@@ -55,8 +79,8 @@
                 <input type="number" id="altura" name="altura" min="0" step="any" required>
                 <label for="resultado-triangulo">Área:</label>
                 <input type="text" id="resultado-triangulo" name="resultado-triangulo" readonly placeholder="Resultado">
-                <button type="submit">Calcular</button>
-                <button type="reset">Limpar</button>
+                <button type="submit" class="resultado-botao">Calcular</button>
+                <button type="reset" class="limpar-botao">Limpar</button>
             </form>
         </div>
         <div id="idade-meses">
@@ -68,8 +92,8 @@
                 <input type="text" id="resultado-idade-meses" name="resultado-idade-meses" readonly placeholder="Resultado">
                 <label for="resultado-idade-dias">Idade em dias:</label>
                 <input type="text" id="resultado-idade-dias" name="resultado-idade-dias" readonly placeholder="Resultado">
-                <button type="submit">Calcular</button>
-                <button type="reset">Limpar</button>    
+                <button type="submit" class="resultado-botao">Calcular</button>
+                <button type="reset" class="limpar-botao">Limpar</button>    
             </form>
         </div>
         <div id="desconto">
@@ -78,10 +102,12 @@
             <form action="" id="form-desconto">
                     <label for="preco-original">Preço Original:</label>
                     <input type="number" id="preco-original" name="preco-original" min="0" step="any" required>
+                    <label for="valor-desconto">Valor do Desconto:</label>
+                    <input type="text" id="valor-desconto" name="valor-desconto" readonly placeholder="Resultado">
                     <label for="resultado-desconto">Preço com Desconto:</label>
                     <input type="text" id="resultado-desconto" name="resultado-desconto" readonly placeholder="Resultado">
-                    <button type="submit" >Calcular</button>
-                    <button type="reset">Limpar</button>
+                    <button type="submit" class="resultado-botao">Calcular</button>
+                    <button type="reset" class="limpar-botao">Limpar</button>
             </form>
         </div>
         <div id="veri-ano-bi">
@@ -91,8 +117,8 @@
                 <input type="number" id="ano" name="ano" min="1" required>
                 <label for="resultado-ano-bissexto">Resultado:</label>
                 <input type="text" id="resultado-ano-bissexto" name="resultado-ano-bissexto" readonly placeholder="Resultado">
-                <button type="submit">Verificar</button>
-                <button type="reset">Limpar</button>
+                <button type="submit" class="resultado-botao">Verificar</button>
+                <button type="reset" class="limpar-botao">Limpar</button>
             </form>
         </div>
         <h2 id="h2-calculadora">Calculadora</h2>
@@ -122,17 +148,69 @@
             </div>
 
         </div>
-        <div class="par-impart"> 
+        <div class="par-impar"> 
             <h2 id="h2-par-impar">Verificador de Número Par ou Ímpar</h2>
             <form action="" id="form-par-impar">
-                <label for="numero">Digite um número:</label>
-                <input type="number" id="numero" name="numero" required>
+                <label for="numeropi">Digite um número:</label>
+                <input type="number" id="numeropi" name="numero" required>
                 <label for="resultado-par-impar">Resultado:</label>
                 <input type="text" id="resultado-par-impar" name="resultado-par-impar" readonly placeholder="Resultado">
-                <button type="submit">Verificar</button>
-                <button type="reset">Limpar</button>
+                <button type="submit" class="resultado-botao">Verificar</button>
+                <button type="reset" class="limpar-botao">Limpar</button>
             </form>
-
+        </div>
+        <div id="conversor-temperatura">
+            <h2 id="temp-convert">Conversor de Temperatura</h2>
+            <p id="p-convert">Converta temperaturas entre Celsius, Fahrenheit e Kelvin.</p>
+            <form action="" id="form-temperatura">
+                <label for="temperatura">Digite a temperatura:</label>
+                <input type="number" id="temperatura" name="temperatura" required>
+                <label for="unidade">Selecione a unidade:</label>
+                <select id="unidade" name="unidade" class="select-botao">
+                    <option value="celsius">Celsius</option>
+                    <option value="fahrenheit">Fahrenheit</option>
+                    <option value="kelvin">Kelvin</option>
+                </select>
+                <label for="resultado-conversao">Resultado:</label>
+                <legend id="celsius">Celsius</legend>
+                <textarea name="celsius" id="celsius-resultado" readonly></textarea>
+                <legend id="fahrenheit">Fahrenheit</legend>
+                <textarea name="fahrenheit" id="fahrenheit-resultado" readonly></textarea>
+                <legend id="kelvin">Kelvin</legend>
+                <textarea name="kelvin" id="kelvin-resultado" readonly></textarea>
+                <button type="submit" class="resultado-botao">Converter</button>
+                <button type="reset" class="limpar-botao">Limpar</button>
+            </form>
+        </div>
+        <div id="numero">
+            <h2 id="veri-numero">Verificador de Números</h2>
+            <form id="form-numero">
+                <label>Número 1:</label>
+                <input type="number" id="pnnumero1" required>
+                <label>Número 2:</label>
+                <input type="number" id="pnnumero2" required>
+                <label>Número 3:</label>
+                <input type="number" id="pnnumero3" required>
+                <label>Resultado:</label>
+                <textarea id="pnresultado-numeros" readonly></textarea>
+                <label>Maior número:</label>
+                <textarea id="pnresultado-maior" readonly></textarea>
+                <button type="submit" class="resultado-botao">Verificar</button>
+                <button type="reset" class="limpar-botao">Limpar</button>
+            </form>
+        </div>
+        <div class="calculadora-imc">
+            <h2 id="h2-calculadora-imc">Calculadora de IMC</h2>
+            <form action="" id="form-imc">
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso" name="peso" min="0" step="any" required>
+                <label for="altura">Altura (m):</label>
+                <input type="number" id="altura-imc" name="altura" min="0" step="any" required>
+                <label for="resultado-imc">Resultado:</label>
+                <textarea id="resultado-imc" name="resultado-imc" readonly></textarea>
+                <button type="submit" class="resultado-botao">Calcular</button>
+                <button type="reset" class="limpar-botao">Limpar</button>
+            </form>
         </div>
     </main>
     <footer class="footer" id="footer">
